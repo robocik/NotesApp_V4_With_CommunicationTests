@@ -12,6 +12,7 @@ using NUnit.Framework;
 using RestVerifier.AutoFixture;
 using RestVerifier.Core;
 using RestVerifier.Core.Interfaces;
+using RestVerifier.FluentAssertions;
 
 namespace NoteBookApp.Tests.Integrations;
 
@@ -123,14 +124,14 @@ public abstract class TestRestCommunication<TClient> : RestVerifier.NUnit.TestCo
     }
 }
 
-public class NoteBookAppAssertionComparer : IObjectsComparer
+public class NoteBookAppAssertionComparer : FluentAssertionComparer
 {
-    public void Compare(object obj1, object obj2)
+    public override void Compare(object obj1, object obj2)
     {
         if (obj1 is UploadAvatarParameter fc1)
         {
             obj1 = fc1.Meta;
         }
-        obj1.Should().BeEquivalentTo(obj2, h => h.IgnoringCyclicReferences());
+        base.Compare(obj1, obj2);
     }
 }
