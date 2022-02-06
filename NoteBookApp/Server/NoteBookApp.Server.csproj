@@ -24,14 +24,15 @@
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.1" />
 		<PackageReference Include="NHibernate" Version="5.3.10" />
 		<PackageReference Include="NHibernate.AspNetCore.Identity" Version="6.0.1" />
-		<PackageReference Include="NHibernate.NetCore" Version="6.0.1" />
-		<PackageReference Include="Microsoft.Data.SqlClient" Version="4.0.0" />
+		<PackageReference Include="NHibernate.NetCore" Version="6.0.2" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="4.1.0" />
 		<PackageReference Include="System.Data.SQLite.Core" Version="1.0.115.5" />
-		<PackageReference Include="AutoMapper" Version="10.1.1" />
-		<PackageReference Include="MediatR" Version="9.0.0" />
-		<PackageReference Include="Duende.IdentityServer" Version="6.0.1" />
-		<PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="6.0.1" />
-		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+		<PackageReference Include="AutoMapper" Version="11.0.0" />
+		<PackageReference Include="MediatR" Version="10.0.1" />
+		<PackageReference Include="Duende.IdentityServer" Version="6.0.3" />
+		<PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="6.0.3" />
+		<PackageReference Include="Duende.IdentityServer.EntityFramework.Storage" Version="6.0.3" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>

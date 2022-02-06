@@ -28,6 +28,7 @@ public class AccountDataServiceTests_Easy : RestVerifier.NUnit.TestCommunication
             var client = new AccountDataService(httpClient);
             return Task.FromResult(client);
         });
+        builder.CheckExceptionHandling<InvalidOperationException>();
     }
 }
 
@@ -50,6 +51,7 @@ public class FileDataServiceTests_Easy : RestVerifier.NUnit.TestCommunicationBas
             var client = new FileDataService(httpClient, fileUploader.Object);
             return Task.FromResult(client);
         });
+        builder.CheckExceptionHandling<InvalidOperationException>();
         builder.ConfigureVerify(cons =>
         {
             cons.Verify(g => g.UploadAvatarFull(Behavior.Verify<UploadFileParam>(), Behavior.Ignore<Stream>()));
@@ -80,5 +82,6 @@ public class NoteDataServiceTests_Easy : RestVerifier.NUnit.TestCommunicationBas
             var client = new NoteDataService(httpClient);
             return Task.FromResult(client);
         });
+        builder.CheckExceptionHandling<InvalidOperationException>();
     }
 }

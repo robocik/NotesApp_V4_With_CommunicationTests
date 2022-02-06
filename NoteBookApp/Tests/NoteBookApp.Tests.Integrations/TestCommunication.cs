@@ -58,7 +58,7 @@ public abstract class TestRestCommunication<TClient> : RestVerifier.NUnit.TestCo
         });
         _builder.OnMethodExecuted(context =>
         {
-            context.Abort = context.Exception is not UnauthorizedAccessException;
+            context.Abort = context.Exception?.InnerException is not UnauthorizedAccessException;
             return Task.CompletedTask;
         });
         return base.TestServices(method);
@@ -121,17 +121,5 @@ public abstract class TestRestCommunication<TClient> : RestVerifier.NUnit.TestCo
         var creator = new NoteBookAppAssertionComparer();
 
         return creator;
-    }
-}
-
-public class NoteBookAppAssertionComparer : FluentAssertionComparer
-{
-    public override void Compare(object obj1, object obj2)
-    {
-        if (obj1 is UploadAvatarParameter fc1)
-        {
-            obj1 = fc1.Meta;
-        }
-        base.Compare(obj1, obj2);
     }
 }
